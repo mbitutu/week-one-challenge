@@ -1,5 +1,5 @@
-const calculate =document.querySelector(".AreaOfInput")
-const submitSpeed = document.querySelector(".submitWork")
+const calculate =document.querySelector(".Input")
+const submitSpeed = document.querySelector(".submit")
 
 submitSpeed.addEventListener("click",()=>{
   speedDetector(parseInt(calculate.value,10));
