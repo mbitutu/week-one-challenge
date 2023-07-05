@@ -5,6 +5,33 @@ const calcBtn = document.querySelector(".calcBtn");
 var monthlySalary = 0;
 var monthlyBenefits = 0;
 
+
+//calculate the NSSF pay according to tier 1 (up to 6000))
+//and tier 2 (up to 18000)
+
+const calculateNSSF = (monthlygross) => {
+  let payableNssf = monthlygross * 0.06;
+
+  if (payableNssf <= 6000) {
+    //maximum pay is up to 6000
+    return payableNssf;
+  }
+  if (payableNssf > 6000 && payableNssf <= 18000) {
+    //tier 2
+    //maximu pay is 18000
+    return payableNssf;
+  } else {
+    //payableNssf returned a value greater than 18000
+    //hence, return payableNssf value as 18000 since it's maximum
+
+    payableNssf = 18000;
+
+    return payableNssf;
+  }
+};
+
+
+
 calcBtn.addEventListener("click", () => {
   monthlySalary = parseInt(basicPay.value, 10);
   monthlyBenefits = parseInt(benefits.value, 10);
